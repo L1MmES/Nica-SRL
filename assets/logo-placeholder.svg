@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 64" role="img" aria-label="NICA S.R.L.">
+<!-- Temporary logo: replace this file with the real logo (keep the same path or update the <img> src) -->
+<path d="M6 62 L24 4 H40 L58 62 H46 L33 20 L20 62 Z" fill="#FFB51B"/>
+<path d="M32 62 L32 52 M32 44 L32 36 M32 28 L32 22" stroke="#0B0F10" stroke-width="3" fill="none"/>
+<text x="68" y="52" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="52" letter-spacing="-1" fill="#0B0F10">NICA</text>
+<text x="190" y="60" font-family="Inter,Arial,sans-serif" font-weight="600" font-size="9" letter-spacing="1" fill="#FFB51B">S.R.L.</text>
+</svg>
