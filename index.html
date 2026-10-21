@@ -21,7 +21,6 @@
 </head>
 
 <body>
-<!-- Shared SVG icons (outline style). Used with <svg class="icon"><use href="#i-name"/></svg> -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
   <symbol id="i-helmet" viewBox="0 0 24 24"><path d="M4 17h16M5 17a7 7 0 0114 0M12 7v5M9 17v-4M15 17v-4M3 20h18"/></symbol>
@@ -50,8 +49,8 @@
         <li><a class="nav-link is-active" href="#home">Home</a></li>
         <li><a class="nav-link" href="#chi-siamo">Chi siamo</a></li>
         <li><a class="nav-link" href="#servizi">Servizi</a></li>
-        <li><a class="nav-link" href="#progetti">Progetti</a></li>
         <li><a class="nav-link" href="#infrastrutture">Infrastrutture</a></li>
+        <li><a class="nav-link" href="#progetti">Progetti</a></li>
         <li><a class="nav-link" href="#contatti">Contatti</a></li>
         <li class="nav-cta"><a class="btn btn--primary" href="mailto:info@nicasrl.com?subject=Richiesta%20di%20preventivo">Richiedi un preventivo</a></li>
       </ul>
@@ -111,6 +110,68 @@
       <li class="service"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg><h3>Ristrutturazioni e manutenzioni</h3></li>
     </ul>
   </div>
+</section>
+
+<!-- OPERE INFRASTRUTTURALI -->
+<section class="section infrastructure" id="infrastrutture"
+         aria-labelledby="infrastructure-title">
+
+  <div class="container">
+
+    <div class="infrastructure-head">
+
+    <div class="infrastructure-title-wrap">
+      <p class="infrastructure-label">
+        <span></span> LE NOSTRE COMPETENZE
+      </p>
+
+      <h2 class="infrastructure-title" id="infrastructure-title">
+        Opere<br>
+        <span>infrastrutturali</span>
+      </h2>
+    </div>
+
+    <div class="infrastructure-intro">
+        <p>
+        Realizziamo interventi infrastrutturali per committenti pubblici
+        e privati, con attenzione alla qualità delle opere, alla sicurezza
+        sul lavoro e al rispetto dell'ambiente.
+        </p>
+    </div>
+
+    </div>
+
+    <div class="infrastructure-gallery" id="infrastructure-gallery">
+
+      <img
+        id="infrastructure-image"
+        src="assets/projects/lavori-infrastrutturali/infrastrutturali1.jpeg"
+        alt="Opere infrastrutturali realizzate da NICA S.r.l."
+        loading="lazy"
+      >
+
+      <button
+        class="gallery-arrow gallery-prev"
+        id="infrastructure-prev"
+        type="button"
+        aria-label="Fotografia precedente"
+      >&#10148;</button>
+
+      <button
+        class="gallery-arrow gallery-next"
+        id="infrastructure-next"
+        type="button"
+        aria-label="Fotografia successiva"
+      >&#10148;</button>
+
+      <span class="gallery-counter" id="infrastructure-counter">
+        1 / 13
+      </span>
+
+    </div>
+
+  </div>
+
 </section>
 
 <!-- ================= SECTION E — PROGETTI =================
@@ -359,67 +420,7 @@
   </div>
 </section>
 
-<!-- OPERE INFRASTRUTTURALI -->
-<section class="section infrastructure" id="infrastrutture"
-         aria-labelledby="infrastructure-title">
 
-  <div class="container">
-
-    <div class="infrastructure-head">
-
-    <div class="infrastructure-title-wrap">
-      <p class="infrastructure-label">
-        <span></span> LE NOSTRE COMPETENZE
-      </p>
-
-      <h2 class="infrastructure-title" id="infrastructure-title">
-        Opere<br>
-        <span>infrastrutturali</span>
-      </h2>
-    </div>
-
-    <div class="infrastructure-intro">
-        <p>
-        Realizziamo interventi infrastrutturali per committenti pubblici
-        e privati, con attenzione alla qualità delle opere, alla sicurezza
-        sul lavoro e al rispetto dell'ambiente.
-        </p>
-    </div>
-
-    </div>
-
-    <div class="infrastructure-gallery" id="infrastructure-gallery">
-
-      <img
-        id="infrastructure-image"
-        src="assets/projects/lavori-infrastrutturali/infrastrutturali1.jpeg"
-        alt="Opere infrastrutturali realizzate da NICA S.r.l."
-        loading="lazy"
-      >
-
-      <button
-        class="gallery-arrow gallery-prev"
-        id="infrastructure-prev"
-        type="button"
-        aria-label="Fotografia precedente"
-      >&#10148;</button>
-
-      <button
-        class="gallery-arrow gallery-next"
-        id="infrastructure-next"
-        type="button"
-        aria-label="Fotografia successiva"
-      >&#10148;</button>
-
-      <span class="gallery-counter" id="infrastructure-counter">
-        1 / 13
-      </span>
-
-    </div>
-
-  </div>
-
-</section>
 
 <!-- Project detail modal (filled by JavaScript) -->
 <dialog class="modal" id="project-modal" aria-labelledby="modal-title">
