@@ -86,6 +86,39 @@ button{font:inherit;cursor:pointer}
 .feature .icon-ring{flex:none;width:52px;height:52px;display:grid;place-items:center;border:1px solid var(--yellow);border-radius:50%;}
 .feature .icon{width:28px;height:28px;}
 
+.bounce-text span {
+  display: inline-block;
+  /* Задаем базовый цвет текста */
+  color: #333333; 
+  /* Запускаем плавную волну света */
+  animation: lightWave 6s ease-in-out infinite;
+}
+
+
+@keyframes lightWave {
+  0%, 100% {
+    color: #333333; 
+    filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+    transform: scale(1);
+  }
+  25% {
+    color: #ffffffa6; 
+    filter: drop-shadow(0 0 4px rgba(255, 149, 88, 0.829)); 
+    transform: scale(1.05); 
+  }
+  50% {
+    color: #333333; 
+    filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+    transform: scale(1);
+  }
+}
+
+
+.bounce-text span:empty, 
+.bounce-text span[data-space="true"] {
+  width: 0.25em;
+}
+
 /* ==========================================================
    7. SERVIZI
    ========================================================== */
@@ -191,14 +224,217 @@ button{font:inherit;cursor:pointer}
 .modal-close{position:absolute;top:12px;right:12px;width:44px;height:44px;border:0;border-radius:50%;background:var(--yellow);color:var(--black);font-size:1.5rem;line-height:1}
 
 /* ==========================================================
-   9. CONTATTI (CTA)
+   9. OPERE INFRASTRUTTURALI
+   ========================================================== */
+
+.infrastructure {
+  background: var(--offwhite);
+}
+
+.infrastructure-head {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: center;
+  gap: 64px;
+  margin-bottom: 42px;
+}
+
+.infrastructure-title-wrap {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.infrastructure-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.infrastructure-label span {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--yellow);
+}
+
+.infrastructure-title {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.infrastructure-title span {
+  display: block;
+  color: #8b9293;
+}
+
+.infrastructure-intro {
+  padding-left: 24px;
+  border-left: 3px solid var(--yellow);
+}
+
+.infrastructure-intro p {
+  max-width: 43ch;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+/* Обёртка карусели */
+.infrastructure-gallery {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 10px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+
+  box-shadow: 0 12px 35px rgba(11, 15, 16, 0.09);
+}
+
+/* Фотография */
+.infrastructure-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 7px;
+
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+/* Плавное исчезновение при смене фото */
+.infrastructure-gallery img.is-changing {
+  opacity: 0.35;
+}
+
+/* Стрелки */
+.infrastructure-gallery .gallery-arrow {
+  width: 44px;
+  height: 44px;
+  background: rgba(11, 15, 16, 0.78);
+  backdrop-filter: blur(5px);
+}
+
+.infrastructure-gallery .gallery-arrow:hover {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.infrastructure-gallery .gallery-prev {
+  left: 22px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.infrastructure-gallery .gallery-next {
+  right: 22px;
+}
+
+/* Счётчик */
+.infrastructure-gallery .gallery-counter {
+  right: 22px;
+  bottom: 22px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: rgba(11, 15, 16, 0.78);
+  backdrop-filter: blur(5px);
+}
+
+/* Планшеты */
+@media (max-width: 900px) {
+  .infrastructure-head {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .infrastructure-gallery {
+    max-width: 760px;
+  }
+}
+
+/* Телефоны */
+@media (max-width: 640px) {
+  .infrastructure-gallery {
+    padding: 6px;
+    aspect-ratio: 4 / 3;
+    border-radius: 9px;
+  }
+
+  .infrastructure-gallery img {
+    border-radius: 5px;
+  }
+
+  .infrastructure-gallery .gallery-arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .infrastructure-gallery .gallery-prev {
+    left: 12px;
+  }
+
+  .infrastructure-gallery .gallery-next {
+    right: 12px;
+  }
+
+  .infrastructure-gallery .gallery-counter {
+    right: 12px;
+    bottom: 12px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .infrastructure-head {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .infrastructure-intro {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .infrastructure-title {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .infrastructure-head {
+    margin-bottom: 28px;
+  }
+
+  .infrastructure-intro p {
+    font-size: 0.88rem;
+  }
+}
+
+/* ==========================================================
+   10. CONTATTI (CTA)
    ========================================================== */
 .cta{background:var(--black);color:var(--white);padding:56px 0}
 .cta-inner{display:grid;grid-template-columns:1fr 1.1fr auto;gap:40px;align-items:center}
 .cta p{color:var(--muted-light);font-size:.92rem;max-width:42ch}
 
 /* ==========================================================
-   10. FOOTER
+   11. FOOTER
    ========================================================== */
 .site-footer{background:var(--black);color:var(--muted-light);border-top:1px solid var(--line-dark);font-size:.82rem}
 .footer-grid{display:grid;grid-template-columns:1fr 1.3fr 1.3fr 1.1fr;gap:32px;padding:40px 0}
@@ -229,7 +465,7 @@ button{font:inherit;cursor:pointer}
    
 
 /* ==========================================================
-   11. RESPONSIVE (desktop-first overrides)
+   12. RESPONSIVE (desktop-first overrides)
    ========================================================== */
 @media (max-width:1080px){
   .service-list{grid-template-columns:repeat(3,1fr);gap:32px 24px}

@@ -108,6 +108,81 @@
     showPhoto(0);
   });
 
+    /* Infrastructure photo gallery */
+
+  var infrastructurePhotos = [
+    "assets/projects/lavori-infrastrutturali/infrastrutturali1.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali2.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali3.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali4.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali5.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali6.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali7.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali8.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali9.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali10.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali11.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali12.jpeg",
+    "assets/projects/lavori-infrastrutturali/infrastrutturali13.jpeg"
+  ];
+
+  var infrastructureImage = document.getElementById("infrastructure-image");
+  var infrastructureCounter = document.getElementById("infrastructure-counter");
+  var infrastructurePrev = document.getElementById("infrastructure-prev");
+  var infrastructureNext = document.getElementById("infrastructure-next");
+
+  if (
+    infrastructureImage &&
+    infrastructureCounter &&
+    infrastructurePrev &&
+    infrastructureNext
+  ) {
+    var infrastructureIndex = 0;
+
+    function showInfrastructurePhoto(index) {
+      infrastructureIndex =
+        (index + infrastructurePhotos.length) % infrastructurePhotos.length;
+
+      infrastructureImage.classList.add("is-changing");
+
+      infrastructureImage.onload = function () {
+        infrastructureImage.classList.remove("is-changing");
+      };
+
+      infrastructureImage.src = infrastructurePhotos[infrastructureIndex];
+
+      infrastructureCounter.textContent =
+        (infrastructureIndex + 1) + " / " + infrastructurePhotos.length;
+    }
+
+    infrastructurePrev.addEventListener("click", function () {
+    showInfrastructurePhoto(infrastructureIndex - 1);
+    restartInfrastructureAutoplay();
+    });
+
+    infrastructureNext.addEventListener("click", function () {
+      showInfrastructurePhoto(infrastructureIndex + 1);
+      restartInfrastructureAutoplay();
+    });
+
+    /* Автоматическое переключение фотографий */
+    var infrastructureAutoplay;
+
+    function startInfrastructureAutoplay() {
+      infrastructureAutoplay = setInterval(function () {
+        showInfrastructurePhoto(infrastructureIndex + 1);
+      }, 3000);
+    }
+
+    function restartInfrastructureAutoplay() {
+      clearInterval(infrastructureAutoplay);
+      startInfrastructureAutoplay();
+    }
+
+    showInfrastructurePhoto(0);
+    startInfrastructureAutoplay();
+  }
+
   /* Project modal (<dialog>: Escape closes it natively) */
   var modal = document.getElementById("project-modal");
   var mImg = document.getElementById("modal-img");
@@ -127,3 +202,40 @@
   modal.querySelector(".modal-close").addEventListener("click", function () { modal.close(); });
   modal.addEventListener("click", function (e) { if (e.target === modal) modal.close(); }); /* click on backdrop */
 })();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const bounceTarget = document.querySelector(".bounce-text");
+  if (!bounceTarget) return;
+
+  const text = bounceTarget.textContent;
+  
+  function triggerWave() {
+    bounceTarget.innerHTML = ""; // Очищаем перед новым стартом
+
+    [...text].forEach((char, index) => {
+      const span = document.createElement("span");
+      
+      if (char === " ") {
+        span.innerHTML = "&nbsp;";
+        span.setAttribute("data-space", "true");
+      } else {
+        span.textContent = char;
+      }
+
+      // Быстрая задержка между буквами (0.04 секунды)
+      span.style.animationDelay = `${index * 0.04}s`;
+      bounceTarget.appendChild(span);
+    });
+  }
+
+  // Считаем общее время волны: (кол-во букв * 0.04с задержки) + 1.2с на саму анимацию буквы
+  const oneWaveDuration = (text.length * 40) + 1200; 
+  const pauseDuration = 2000; // Пауза в конце (1 секунда)
+
+  // Запускаем первую волну
+  triggerWave();
+  
+  // Перезапускаем строго после окончания волны + пауза
+  setInterval(triggerWave, oneWaveDuration + pauseDuration);
+});
+
