@@ -438,7 +438,8 @@ button{font:inherit;cursor:pointer}
    ========================================================== */
 .site-footer{background:var(--black);color:var(--muted-light);border-top:1px solid var(--line-dark);font-size:.82rem}
 .footer-grid{display:grid;grid-template-columns:1fr 1.3fr 1.3fr 1.1fr;gap:32px;padding:40px 0}
-.footer-grid img{height:48px;width:auto;filter: brightness(0) invert(1);}
+.footer-grid .footer-nica-logo{height:48px;width:auto;filter: brightness(0) invert(1);}
+.footer-grid .footer-tcl-logo {width: 180px;height: auto;filter: none;object-fit: contain; border-radius: 6px;}
 .footer-grid h2{margin-bottom:8px;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow)}
 .footer-grid address{font-style:normal;line-height:1.7}
 .footer-grid a:hover{color:var(--yellow)}
@@ -462,6 +463,84 @@ button{font:inherit;cursor:pointer}
       color: orange;
    }
 }
+
+.certifications-section {
+    padding-top: 100px;
+}
+
+.certifications-heading {
+    max-width: 760px;
+    margin-bottom: 55px;
+}
+
+.certifications-intro {
+    max-width: 680px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.certification-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--white);
+}
+
+.certification-preview {
+    padding: 25px;
+    background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+}
+
+.certification-preview img {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: 420px;
+    object-fit: contain;
+}
+
+.certification-info {
+    padding: 28px;
+}
+
+.certification-info h2 {
+    margin: 10px 0;
+}
+
+.certification-info p {
+    line-height: 1.6;
+}
+
+
+@media (max-width: 768px) {
+    .certifications-section {
+        padding-top: 65px;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certification-preview img {
+        height: 380px;
+    }
+}
+.footer-brand-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+
    
 
 /* ==========================================================
@@ -492,13 +571,15 @@ button{font:inherit;cursor:pointer}
   :root{--gutter:20px}
   .hero{min-height:420px;background:linear-gradient(180deg,rgba(11,15,16,0.2),rgba(11,15,16,0.85)),url("assets/hero-mobile.jpeg"); background-position: center; background-size: cover; background-repeat: no-repeat; min-height: 500px;}
   .about-media::before{display: none;}
-  .features{grid-template-columns:1fr}
+  .features{grid-template-columns: repeat(2, 1fr); gap: 20px 12px;}
   .service-list{grid-template-columns:1fr 1fr;gap:28px 16px}
   .project-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .cta .btn{width:100%}
+  .footer-grid .footer-tcl-logo {width: 145px;}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important}
 }
+

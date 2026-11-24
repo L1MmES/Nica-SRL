@@ -12,7 +12,6 @@
 <meta property="og:description" content="Interventi di costruzione, ristrutturazione e opere edili a Novara.">
 <meta property="og:image" content="assets/hero.jpeg">
 <link rel="icon" href="assets/NICA-logo.png" type="image/png">
-<!-- Optional Google Font: if it cannot load, the system sans-serif stack below is used. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,7 +20,7 @@
 </head>
 
 <body>
-<!-- Shared SVG icons (outline style). Used with <svg class="icon"><use href="#i-name"/></svg> -->
+<!-- Shared SVG icons-->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
   <symbol id="i-helmet" viewBox="0 0 24 24"><path d="M4 17h16M5 17a7 7 0 0114 0M12 7v5M9 17v-4M15 17v-4M3 20h18"/></symbol>
@@ -39,7 +38,6 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="#home" aria-label="NICA S.R.L. — Home">
-      <!-- Replace assets/logo-placeholder.svg with the real logo (SVG, PNG or WebP) -->
       <img src="assets/NICA-logo.png" alt="NICA S.R.L." width="200" height="56">
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Apri il menu">
@@ -50,8 +48,9 @@
         <li><a class="nav-link is-active" href="#home">Home</a></li>
         <li><a class="nav-link" href="#chi-siamo">Chi siamo</a></li>
         <li><a class="nav-link" href="#servizi">Servizi</a></li>
-        <li><a class="nav-link" href="#progetti">Progetti</a></li>
         <li><a class="nav-link" href="#infrastrutture">Infrastrutture</a></li>
+        <li><a class="nav-link" href="#progetti">Progetti</a></li>
+        <li><a class="nav-link" href="#certificazioni">Certificazioni</a></li>
         <li><a class="nav-link" href="#contatti">Contatti</a></li>
         <li class="nav-cta"><a class="btn btn--primary" href="mailto:info@nicasrl.com?subject=Richiesta%20di%20preventivo">Richiedi un preventivo</a></li>
       </ul>
@@ -77,7 +76,7 @@
 <section class="section" id="chi-siamo" aria-labelledby="about-title">
   <div class="container about-grid">
     <div class="about-media">
-      <img src="assets/about.jpg" width="768" height="1024" loading="lazy">
+      <img src="assets/about.jpg" width="768" height="1024" loading="lazy" alt="NICA S.r.l. — interventi nel settore edile">
     </div>
     <div>
       <p class="eyebrow">Chi siamo</p>
@@ -93,7 +92,7 @@
   </div>
 </section>
 
-<!-- ================= SECTION D — SERVIZI (labels are provisional; edit freel  y) ================= -->
+<!-- ================= SECTION D — SERVIZI ================= -->
 <section class="section section--dark services" id="servizi" aria-labelledby="services-title">
   <div class="container">
     <div class="services-head">
@@ -113,9 +112,69 @@
   </div>
 </section>
 
-<!-- ================= SECTION E — PROGETTI =================
-     Each card: replace the image src and edit title/description.
-     The full description is shown clamped in the grid and in full inside the modal. -->
+<!-- OPERE INFRASTRUTTURALI -->
+<section class="section infrastructure" id="infrastrutture"
+         aria-labelledby="infrastructure-title">
+
+  <div class="container">
+
+    <div class="infrastructure-head">
+
+    <div class="infrastructure-title-wrap">
+      <p class="infrastructure-label">
+        <span></span> LE NOSTRE COMPETENZE
+      </p>
+
+      <h2 class="infrastructure-title" id="infrastructure-title">
+        Opere<br>
+        <span>infrastrutturali</span>
+      </h2>
+    </div>
+
+    <div class="infrastructure-intro">
+        <p>
+        Realizziamo interventi infrastrutturali per committenti pubblici
+        e privati, con attenzione alla qualità delle opere, alla sicurezza
+        sul lavoro e al rispetto dell'ambiente.
+        </p>
+    </div>
+
+    </div>
+
+    <div class="infrastructure-gallery" id="infrastructure-gallery">
+
+      <img
+        id="infrastructure-image"
+        src="assets/projects/lavori-infrastrutturali/infrastrutturali1.jpeg"
+        alt="Opere infrastrutturali realizzate da NICA S.r.l."
+        loading="lazy"
+      >
+
+      <button
+        class="gallery-arrow gallery-prev"
+        id="infrastructure-prev"
+        type="button"
+        aria-label="Fotografia precedente"
+      >&#10148;</button>
+
+      <button
+        class="gallery-arrow gallery-next"
+        id="infrastructure-next"
+        type="button"
+        aria-label="Fotografia successiva"
+      >&#10148;</button>
+
+      <span class="gallery-counter" id="infrastructure-counter">
+        1 / 13
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= SECTION E — PROGETTI ================= -->
 <section class="section" id="progetti" aria-labelledby="projects-title">
   <div class="container">
     <div class="projects-head">
@@ -359,67 +418,83 @@
   </div>
 </section>
 
-<!-- OPERE INFRASTRUTTURALI -->
-<section class="section infrastructure" id="infrastrutture"
-         aria-labelledby="infrastructure-title">
 
-  <div class="container">
+<section class="section certifications-section" id="certificazioni">
+    <div class="container">
 
-    <div class="infrastructure-head">
+        <div class="certifications-heading">
+            <p class="eyebrow">Qualità e sicurezza</p>
+            <h1 class="section-title">
+                Le nostre <span class="accent">certificazioni</span>
+            </h1>
 
-    <div class="infrastructure-title-wrap">
-      <p class="infrastructure-label">
-        <span></span> LE NOSTRE COMPETENZE
-      </p>
+            <p class="certifications-intro">
+                NICA S.r.l. adotta sistemi di gestione certificati
+                secondo le norme ISO 9001:2015 e EN ISO 45001:2023,
+                a conferma dell'attenzione dedicata alla qualità
+                dei processi aziendali e alla salute e sicurezza
+                sul lavoro.
+            </p>
+        </div>
 
-      <h2 class="infrastructure-title" id="infrastructure-title">
-        Opere<br>
-        <span>infrastrutturali</span>
-      </h2>
+        <div class="certifications-grid">
+
+            <article class="certification-card">
+                <div class="certification-preview">
+                    <img
+                        src="assets/certifications/iso-9001-preview.webp"
+                        alt="Certificato ISO 9001:2015 di NICA S.r.l."
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="certification-info">
+                    <p class="eyebrow">Sistema di gestione per la qualità</p>
+                    <h2>ISO 9001:2015</h2>
+
+                    <a
+                        class="btn btn--primary"
+                        href="assets/certifications/iso-9001.pdf"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Visualizza certificato
+                    </a>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <div class="certification-preview">
+                    <img
+                        src="assets/certifications/iso-45001-preview.webp"
+                        alt="Certificato EN ISO 45001:2023 di NICA S.r.l."
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="certification-info">
+                    <p class="eyebrow">
+                        Sistema di gestione per la salute e sicurezza sul lavoro
+                    </p>
+                    <h2>EN ISO 45001:2023</h2>
+
+                    <a
+                        class="btn btn--primary"
+                        href="assets/certifications/iso-45001.pdf"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Visualizza certificato
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
     </div>
-
-    <div class="infrastructure-intro">
-        <p>
-        Realizziamo interventi infrastrutturali per committenti pubblici
-        e privati, con attenzione alla qualità delle opere, alla sicurezza
-        sul lavoro e al rispetto dell'ambiente.
-        </p>
-    </div>
-
-    </div>
-
-    <div class="infrastructure-gallery" id="infrastructure-gallery">
-
-      <img
-        id="infrastructure-image"
-        src="assets/projects/lavori-infrastrutturali/infrastrutturali1.jpeg"
-        alt="Opere infrastrutturali realizzate da NICA S.r.l."
-        loading="lazy"
-      >
-
-      <button
-        class="gallery-arrow gallery-prev"
-        id="infrastructure-prev"
-        type="button"
-        aria-label="Fotografia precedente"
-      >&#10148;</button>
-
-      <button
-        class="gallery-arrow gallery-next"
-        id="infrastructure-next"
-        type="button"
-        aria-label="Fotografia successiva"
-      >&#10148;</button>
-
-      <span class="gallery-counter" id="infrastructure-counter">
-        1 / 13
-      </span>
-
-    </div>
-
-  </div>
-
 </section>
+
+
 
 <!-- Project detail modal (filled by JavaScript) -->
 <dialog class="modal" id="project-modal" aria-labelledby="modal-title">
@@ -449,7 +524,25 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div><img src="assets/NICA-logo.png" alt="NICA S.R.L." width="180" height="50" loading="lazy"></div>
+      <div class="footer-brand-group">
+    <img
+        src="assets/NICA-logo.png"
+        alt="NICA S.R.L."
+        class="footer-nica-logo"
+        width="180"
+        height="50"
+        loading="lazy"
+    >
+
+    <img
+        src="assets/TCL-logo.jpeg"
+        alt="Transpacific Certifications Limited"
+        class="footer-tcl-logo"
+        width="405"
+        height="241"
+        loading="lazy"
+    >
+  </div>
       <div>
         <h2>Sede legale</h2>
         <address>NICA S.R.L.<br>Via E. Bottini, 1<br>28100 Novara (NO), Italia</address>
